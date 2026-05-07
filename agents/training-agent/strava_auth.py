@@ -1,6 +1,6 @@
 """
 One-time script to get your Strava refresh token.
-Run this once, paste the token into .env, then use main.py normally.
+Run this once, paste the token into .env, then use training_agent.py normally.
 """
 import os
 import webbrowser

@@ -18,20 +18,20 @@ pip install -r requirements.txt
 python interview_agent.py
 ```
 
-### `agents/trainingagent/`
+### `agents/training-agent/`
 A marathon training coach agent. Pulls data from Strava, Garmin Connect, and Notion, then uses `anthropic.beta.messages.tool_runner` with `@beta_tool`-decorated Python functions as tools. Uses `claude-opus-4-7`.
 
 **Run:**
 ```bash
-cd agents/trainingagent
+cd agents/training-agent
 cp .env.example .env   # fill in credentials
 pip install -r requirements.txt
-python strava_auth.py  # one-time Strava OAuth — populates STRAVA_REFRESH_TOKEN in .env
-python main.py                    # review last 14 days, update plan
-python main.py --days 7           # shorter window
-python main.py --dry-run          # print updated plan without saving to Notion
-python main.py --no-garmin        # skip Garmin (use when rate-limited)
-python main.py --note "on vacation this week"
+python strava_auth.py       # one-time Strava OAuth — populates STRAVA_REFRESH_TOKEN in .env
+python training_agent.py                    # review last 14 days, update plan
+python training_agent.py --days 7           # shorter window
+python training_agent.py --dry-run          # print updated plan without saving to Notion
+python training_agent.py --no-garmin        # skip Garmin (use when rate-limited)
+python training_agent.py --note "on vacation this week"
 ```
 
 **Required env vars** (see `.env.example`): `ANTHROPIC_API_KEY`, `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`, `STRAVA_REFRESH_TOKEN`, `GARMIN_EMAIL`, `GARMIN_PASSWORD`, `NOTION_TOKEN`, `NOTION_PAGE_ID`.
