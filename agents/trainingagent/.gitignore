@@ -1,0 +1,23 @@
+# Secrets — never commit these
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Garmin auth tokens (stored locally)
+~/.garminconnect/
+
+# macOS
+.DS_Store
+
+# Claude Code local settings
+.claude/settings.local.json

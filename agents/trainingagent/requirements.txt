@@ -1,0 +1,6 @@
+anthropic
+garminconnect
+garth
+requests
+python-dotenv
+notion-client
